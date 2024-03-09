@@ -1,0 +1,16 @@
+.container {
+    .content {
+        display: flex;
+        $manuWidth: 18rem;
+
+        .menu {
+            width: $manuWidth;
+            background-color: grey;
+        }
+
+        .main-content {
+            padding-left: 2rem;
+            width: calc(100% - $manuWidth);
+        }
+    }
+}

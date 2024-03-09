@@ -1,0 +1,14 @@
+@for (gridTutorial of gridTutorialList; track $index) {
+@for (content of gridTutorial.content; track $index) {
+@if (content?.example?.codeComponent) {
+<div class="example-code-component">
+    <code>
+        {{gridTutorialComponents[content?.example?.codeComponent ?? ''].cssCode}}
+    </code>
+    <ng-container *ngComponentOutlet="gridTutorialComponents?.[content?.example?.codeComponent ?? '']">
+        <!-- scss grid example component displaying -->
+    </ng-container>
+</div>
+}
+}
+}

@@ -1,7 +1,17 @@
-.example-code-component {
-    background-color: #f8f8eb;
-    padding: 1.5rem;
-    border: .3rem solid #12d412;
-    border-radius: .5rem;
-    font-size: 1.25rem;
+.grid-toturial-section {
+    .grid-toturial-content-list {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        .grid-toturial-content {
+            list-style-type: none;
+            margin-top: 4rem;
+
+            .example-code-component {
+                border: .3rem solid #12d412;
+                border-radius: .5rem;
+                background-color: white;
+            }
+        }
+    }
 }

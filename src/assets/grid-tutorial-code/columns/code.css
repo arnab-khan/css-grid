@@ -1,0 +1,19 @@
+h2 {
+    text-align: center;
+}
+
+.container-1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 3fr;
+}
+
+.container-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

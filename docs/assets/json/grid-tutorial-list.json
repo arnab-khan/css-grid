@@ -1,31 +1,32 @@
 [
     {
+        "code": "overview",
         "slug": "overview",
         "heading": "Overview",
-        "description":"",
+        "description": "",
         "content": [
             {
+                "code": "overview",
                 "heading": "Overview",
-                "example":{
-                    "codeComponent":"overview",
-                    "filePath":""
-                },
-                "explain":""
+                "explain": ""
             }
         ]
     },
     {
-        "slug": "overview",
-        "heading": "Overview",
-        "description":"",
+        "code": "rows-and-columns",
+        "slug": "rows-and-columns",
+        "heading": "Rows and Columns",
+        "description": "",
         "content": [
             {
-                "heading": "Overview",
-                "example":{
-                    "codeComponent":"overview",
-                    "filePath":""
-                },
-                "explain":""
+                "code": "rows",
+                "heading": "Rows",
+                "explain": ""
+            },
+            {
+                "code": "columns",
+                "heading": "Columns",
+                "explain": ""
             }
         ]
     }

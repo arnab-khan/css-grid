@@ -16,8 +16,12 @@ export class ApiService {
     return this.httpClient.get('assets/json/grid-tutorial-list.json');
   }
 
-  getScssCode() {
-    return this.httpClient.get('https://api.github.com/repos/arnab-khan/scss-grid/contents/src/app/components/main/grid-tutorial-components/overview/overview.component.scss');
+  getHtmlCode(gridTutorialCode: string) {
+    return this.httpClient.get(`assets/grid-tutorial-code/${gridTutorialCode}/code.html`, { responseType: 'text' });
+  }
+
+  getCssCode(gridTutorialCode: string) {
+    return this.httpClient.get(`assets/grid-tutorial-code/${gridTutorialCode}/code.css`, { responseType: 'text' });
   }
 
 }

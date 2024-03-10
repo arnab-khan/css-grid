@@ -5,9 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MainComponent } from './components/main/main.component';
 import { ApiService } from './services/api/api.service';
-import { GridTutorialListService } from './services/grid-tutorial-list/grid-tutorial-list.service';
-import { OverviewComponent } from './components/main/grid-tutorial-components/overview/overview.component';
 import { GridTutorialList } from './interface/grid-tutorial-list';
+import { DataTransferService } from './services/data-transfer/data-transfer.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +16,8 @@ import { GridTutorialList } from './interface/grid-tutorial-list';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    MainComponent
+    MainComponent,
+    RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -27,12 +27,12 @@ export class AppComponent implements OnInit {
   gridTutorialList: GridTutorialList[]=[];
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private dataTransferService:DataTransferService
   ) { }
 
   ngOnInit(): void {
     this.getGridTutorialList();
-    this.get8GridTutorialList()
   }
 
   getGridTutorialList() {
@@ -40,21 +40,12 @@ export class AppComponent implements OnInit {
       next: (response: any) => {
         console.log('gridTutorialList', response);
         this.gridTutorialList = response;
+        this.dataTransferService.storeGridToturialList(this.gridTutorialList);
       },
       error: (error: any) => {
         console.error('error', error);
       }
     });
-  }  
-  get8GridTutorialList() {
-    this.apiService.getScssCode().subscribe({
-      next: (response: any) => {
-        console.log('gridTutorialList', atob(response.content));
-      },
-      error: (error: any) => {
-        console.error('error', error);
-      }
-    });
-  } 
+  }
   
 }

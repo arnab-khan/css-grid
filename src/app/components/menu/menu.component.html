@@ -1,1 +1,8 @@
-<p>menu works!</p>
+<ul>
+    @for (gridTutorial of gridTutorialList; track $index) {
+    <li>
+        <a routerLink="/{{gridTutorial.slug}}">
+            {{gridTutorial.heading}}
+        </a>
+    </li>}
+</ul>

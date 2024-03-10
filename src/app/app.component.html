@@ -4,10 +4,10 @@
   </header>
   <div class="content">
     <nav class="menu">
-      <app-menu></app-menu>
+      <app-menu [gridTutorialList]="gridTutorialList"></app-menu>
     </nav>
     <main class="main-content">
-      <app-main [gridTutorialList]="gridTutorialList"></app-main>
+      <router-outlet></router-outlet>
     </main>
   </div>
   <footer></footer>

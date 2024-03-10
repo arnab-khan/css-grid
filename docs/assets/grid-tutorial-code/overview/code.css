@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

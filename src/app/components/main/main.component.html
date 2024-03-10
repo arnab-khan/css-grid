@@ -2,6 +2,8 @@
 @for (content of gridTutorial.content; track $index) {
 @if (content?.example?.codeComponent) {
 <div class="example-code-component">
+    <app-run-example></app-run-example>
+
     <code>
         {{gridTutorialComponents[content?.example?.codeComponent ?? ''].cssCode}}
     </code>

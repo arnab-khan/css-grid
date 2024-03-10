@@ -3,9 +3,10 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(HttpClientModule, MonacoEditorModule.forRoot()),
     provideRouter(routes)]
 };

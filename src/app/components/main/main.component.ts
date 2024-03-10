@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { GridTutorialList } from '../../interface/grid-tutorial-list';
 import { GridTutorialListService } from '../../services/grid-tutorial-list/grid-tutorial-list.service';
 import { NgComponentOutlet } from '@angular/common';
+import { RunExampleComponent } from './sub-components/run-example/run-example.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [NgComponentOutlet],
+  imports: [NgComponentOutlet, RunExampleComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

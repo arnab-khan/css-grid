@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGridTutorialList();
+    this.get8GridTutorialList()
   }
 
   getGridTutorialList() {
@@ -45,5 +46,15 @@ export class AppComponent implements OnInit {
       }
     });
   }  
+  get8GridTutorialList() {
+    this.apiService.getScssCode().subscribe({
+      next: (response: any) => {
+        console.log('gridTutorialList', atob(response.content));
+      },
+      error: (error: any) => {
+        console.error('error', error);
+      }
+    });
+  } 
   
 }

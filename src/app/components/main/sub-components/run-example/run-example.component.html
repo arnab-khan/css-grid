@@ -1,0 +1,5 @@
+<ngx-monaco-editor [options]="editorOptionsHtml" [(ngModel)]="codeHtml" (ngModelChange)="changeHtml($event)">
+</ngx-monaco-editor>
+<ngx-monaco-editor [options]="editorOptionsCss" [(ngModel)]="codeCss" (ngModelChange)="changeCss($event)">
+</ngx-monaco-editor>
+<iframe frameborder="0" [srcdoc]="outputCode" style="width: 100%; height: 500px;"></iframe>

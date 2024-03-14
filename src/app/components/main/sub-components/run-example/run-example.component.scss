@@ -1,17 +1,33 @@
-.top-color {
-    height: 1rem;
-    background-color: #1e1e1e;
-}
+.editor-wrapper {
+  position: relative;
+  background-color: #1e1e1e;
 
-.editor {
+  .top-color {
+    height: 1rem;
+  }
+
+  .editor {
     display: flex;
 
     ngx-monaco-editor {
-        width: 50%;
+      width: 50%;
     }
+  }
+
+  .loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    z-index: 20;
+  }
 }
 
 .code-output {
-    width: 100%;
-    height: 260px;
+  width: 100%;
+  height: 260px;
 }

@@ -24,10 +24,9 @@ export class RunExampleComponent implements OnChanges {
 
   outputCode: SafeHtml = '';
   editorOptionsCss = { theme: 'vs-dark', language: 'css' };  //for documentation visit https://www.npmjs.com/package/ngx-monaco-editor-v2
-
   editorOptionsHtml = { theme: 'vs-dark', language: 'html' };  //for documentation visit https://www.npmjs.com/package/ngx-monaco-editor-v2
-
   iframeSrc: any;
+  editorLoader = -2;
 
 
   constructor(
@@ -38,11 +37,6 @@ export class RunExampleComponent implements OnChanges {
     if (changes?.['gridTutorialCode']) {
       this.setOutputCode();
     }
-  }
-
-  call(event: any) {
-    console.log(event);
-
   }
 
   changeHtml(event: any) {
@@ -69,6 +63,10 @@ export class RunExampleComponent implements OnChanges {
     const htmlString = html ? html.toString() : '';
     const encodedHtml = encodeURIComponent(htmlString);
     return `data:text/html;charset=utf-8,${encodedHtml}`;
+  }
+
+  editorOnInit() {
+    this.editorLoader++;
   }
 
 }

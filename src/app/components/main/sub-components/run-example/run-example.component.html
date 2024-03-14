@@ -1,10 +1,47 @@
-<div class="top-color"></div>
-<div class="editor">
-    <ngx-monaco-editor [options]="editorOptionsHtml" [(ngModel)]="gridTutorialCode.htmlCode"
-        (ngModelChange)="changeHtml($event)">
+<div class="editor-wrapper">
+  <div class="top-color"></div>
+  <div class="editor">
+    <ngx-monaco-editor
+      [options]="editorOptionsHtml"
+      [(ngModel)]="gridTutorialCode.htmlCode"
+      (ngModelChange)="changeHtml($event)"
+      (onInit)="editorOnInit()"
+    >
     </ngx-monaco-editor>
-    <ngx-monaco-editor [options]="editorOptionsCss" [(ngModel)]="gridTutorialCode.cssCode"
-        (ngModelChange)="changeCss($event)">
+    <ngx-monaco-editor
+      [options]="editorOptionsCss"
+      [(ngModel)]="gridTutorialCode.cssCode"
+      (ngModelChange)="changeCss($event)"
+      (onInit)="editorOnInit()"
+    >
     </ngx-monaco-editor>
+  </div>
+  @if (editorLoader<0) {
+  <div class="loader">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100px"
+      height="100px"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="8" fill="none">
+        <animate
+          attributeName="stroke-dashoffset"
+          dur="2s"
+          repeatCount="indefinite"
+          from="0"
+          to="502"
+        />
+        <animate
+          attributeName="stroke-dasharray"
+          dur="2s"
+          repeatCount="indefinite"
+          values="150.6 100.4;1 250;150.6 100.4"
+        />
+      </circle>
+    </svg>
+  </div>
+  }
 </div>
 <iframe frameborder="0" [srcdoc]="outputCode" class="code-output"></iframe>

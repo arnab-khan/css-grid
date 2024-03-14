@@ -1,7 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --mainBackgroundColor: #f8f8eb;
+}
+
 html {
     font-size: calc(0.125vw + 13.6px); //responsive font size 16px for 1920px screen and 14px for 320px screen
     line-height: 1.4em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f8f8eb;
+    background-color: var(--mainBackgroundColor);
+
+    body {
+        margin: 0;
+    }
+}
+
+.hide-element {
+    height: 0;
+    width: 0;
+    overflow: hidden;
 }

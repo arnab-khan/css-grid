@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 import { GridTutorialList } from '../../interface/grid-tutorial-list';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -10,7 +10,10 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-
   @Input() gridTutorialList: GridTutorialList[] = [];
+  @Output() clickedMenu = new EventEmitter<boolean>();
 
+  onClickMenu() {
+    this.clickedMenu.emit(true);
+  }
 }

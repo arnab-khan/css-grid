@@ -1,7 +1,7 @@
 <ul>
     @for (gridTutorial of gridTutorialList; track $index) {
     <li>
-        <a routerLink="/{{gridTutorial.slug}}">
+        <a routerLink="/{{gridTutorial.slug}}" (click)="onClickMenu()">
             {{gridTutorial.heading}}
         </a>
     </li>}

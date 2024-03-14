@@ -1,14 +1,33 @@
-<div class="container">
-  <header>
-    <app-header></app-header>
-  </header>
-  <div class="content">
-    <nav class="menu">
-      <app-menu [gridTutorialList]="gridTutorialList"></app-menu>
-    </nav>
-    <main class="main-content">
-      <router-outlet></router-outlet>
-    </main>
+<div class="outer-wrap">
+  @if (mainLoader) {
+  <div class="loader">
+    <img src="assets/images/loader/loader-green.svg" alt="loader" />
   </div>
-  <footer></footer>
+  } @else {
+  <div class="container">
+    <header class="main-header">
+      <app-header></app-header>
+    </header>
+    <div class="content">
+      <nav class="menu">
+        <app-menu [gridTutorialList]="gridTutorialList" (clickedMenu)="clickedMenu()"></app-menu>
+      </nav>
+      <div class="page">
+        <div class="main-content-loader" [ngStyle]="{ display: mainPageLoader ? 'flex' : 'none' }">
+          <img src="assets/images/loader/loader-green.svg" alt="loader" />
+        </div>
+        <div class="page-content">
+          <main class="main-content">
+            <div>
+              <router-outlet></router-outlet>
+            </div>
+          </main>
+          <footer class="main-footer">
+            <app-footer></app-footer>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
 </div>

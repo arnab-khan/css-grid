@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GridTutorialList } from '../../interface/grid-tutorial-list';
 import { NgComponentOutlet } from '@angular/common';
 import { RunExampleComponent } from './sub-components/run-example/run-example.component';
@@ -19,6 +19,7 @@ import {
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit {
+
   gridTutorialList: GridTutorialList[] = [];
   currentGridTutorialList: GridTutorialList | undefined;
   gridTutorialCodeList: gridTutorialCodeList = {};
@@ -30,7 +31,7 @@ export class MainComponent implements OnInit {
     private dataTransferService: DataTransferService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getSlug();
@@ -53,17 +54,19 @@ export class MainComponent implements OnInit {
 
   getSlug() {
     this.slug = this.activatedRoute.snapshot.params['slug'];
-    console.log('slug', this.slug);
+    // console.log('slug', this.slug);
   }
 
   getGridTutorialList() {
+    this.dataTransferService.storeApiCalledList({ gridToturialListMainPage: false });
     this.dataTransferService.getGridToturialList().subscribe({
       next: (response) => {
-        console.log('gridTutorialList', response);
+        // console.log('gridTutorialList', response);
         if (response?.length) {
           this.gridTutorialList = response;
           this.getCurrentGridTutorial();
         }
+        this.dataTransferService.storeApiCalledList({ gridToturialListMainPage: true });
       },
       error: (error: any) => {
         console.error('error', error);
@@ -87,16 +90,16 @@ export class MainComponent implements OnInit {
         cssCode: this.apiService.getCssCode(gridTutorialCode),
       });
       this.dataTransferService.storeApiCalledList({
-        [gridTutorialCode]: false,
+        [gridTutorialCode]: false
       });
       code.subscribe({
         next: (response: gridTutorialCode) => {
           Object.assign(this.gridTutorialCodeList, {
             [gridTutorialCode]: response,
           });
-          console.log('gridTutorialCodeList', this.gridTutorialCodeList);
+          // console.log('gridTutorialCodeList', this.gridTutorialCodeList);
           this.dataTransferService.storeApiCalledList({
-            [gridTutorialCode]: true,
+            [gridTutorialCode]: true
           });
         },
         error: (error: any) => {

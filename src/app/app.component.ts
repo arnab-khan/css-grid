@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   mainLoader = true;
   mainPageLoader = true;
   apiCalledList: { [x: string]: boolean } = {};
+  notAllApiCompleted: boolean | undefined;
 
   constructor(
     private apiService: ApiService,
@@ -39,25 +40,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGridTutorialList();
-    this.dataTransferService.getApiCalledList().subscribe({
-      next: (response: any) => {
-        this.checkifAllApiCallCompleted(response);
-      },
-      error: (error: any) => {
-        console.error('error', error);
-      },
-    });
-
+    this.checkIfAllApiCallCompletedOtherComponents();
   }
 
   getGridTutorialList() {
-    this.checkifAllApiCallCompleted({ gridTutorialList: false });
+    this.checkIfAllApiCallCompleted({ gridTutorialList: false });
     this.apiService.getGridTutorialList().subscribe({
       next: (response: any) => {
-        console.log('gridTutorialList', response);
+        // console.log('gridTutorialList', response);
         this.gridTutorialList = response;
         this.dataTransferService.storeGridToturialList(this.gridTutorialList);
-        this.checkifAllApiCallCompleted({ gridTutorialList: true });
+        setTimeout(() => {
+          this.checkIfAllApiCallCompleted({ gridTutorialList: true });
+        }, 0);
       },
       error: (error: any) => {
         console.error('error', error);
@@ -65,15 +60,29 @@ export class AppComponent implements OnInit {
     });
   }
 
-  checkifAllApiCallCompleted(apiCalled: { [x: string]: boolean }) {
+  checkIfAllApiCallCompletedOtherComponents() {
+    this.dataTransferService.getApiCalledList().subscribe({
+      next: (response: any) => {
+        this.checkIfAllApiCallCompleted(response);
+      },
+      error: (error: any) => {
+        console.error('error', error);
+      },
+    });
+  }
+
+  checkIfAllApiCallCompleted(apiCalled: { [x: string]: boolean }) {
     Object.assign(this.apiCalledList, apiCalled);
     const apiCalledValueList = Object.values(this.apiCalledList);
-    const notAllApiCompleted = apiCalledValueList.some((element) => {
+    this.notAllApiCompleted = apiCalledValueList.some((element) => {
       return !element;
     });
+    console.log('apiCalledList', this.apiCalledList);
+    console.log(this.notAllApiCompleted);
+
     setTimeout(() => {
       setTimeout(() => {
-        if (!notAllApiCompleted) {
+        if (!this.notAllApiCompleted) {
           this.mainLoader = false;
           this.mainPageLoader = false;
           console.log('apiCalledList', this.apiCalledList);
@@ -84,10 +93,10 @@ export class AppComponent implements OnInit {
 
   clickedMenu() {
     this.mainPageLoader = true;
-    this.checkifAllApiCallCompleted({ clickedMenu: false });
+    this.checkIfAllApiCallCompleted({ clickedMenu: false });
     setTimeout(() => {
       setTimeout(() => {
-        this.checkifAllApiCallCompleted({ clickedMenu: true });
+        this.checkIfAllApiCallCompleted({ clickedMenu: true });
       }, 0);
     }, 0);
   }

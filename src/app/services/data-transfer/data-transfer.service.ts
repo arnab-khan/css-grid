@@ -6,25 +6,20 @@ import { GridTutorialList } from '../../interface/grid-tutorial-list';
   providedIn: 'root',
 })
 export class DataTransferService {
-  constructor() {}
+  constructor() { }
 
-  private gridToturialList = new BehaviorSubject<GridTutorialList[] | null>(
-    null
-  );
-  private apiCalledList = new BehaviorSubject<{ [x: string]: boolean }>({});
-
+  private gridToturialList = new BehaviorSubject<GridTutorialList[] | null>(null);
   storeGridToturialList(data: GridTutorialList[]) {
     this.gridToturialList.next(data);
   }
-
   getGridToturialList(): Observable<GridTutorialList[] | null> {
     return this.gridToturialList.asObservable();
   }
 
+  private apiCalledList = new BehaviorSubject<{ [x: string]: boolean }>({});
   storeApiCalledList(data: { [x: string]: boolean }) {
     this.apiCalledList.next(data);
   }
-
   getApiCalledList(): Observable<{ [x: string]: boolean }> {
     return this.apiCalledList.asObservable();
   }

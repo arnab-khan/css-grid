@@ -25,7 +25,7 @@
       flex-grow: 1;
       overflow: auto;
       display: flex;
-      $manuWidth: 18rem;
+      $manuWidth: 12rem;
 
       .menu {
         width: $manuWidth;
@@ -35,12 +35,8 @@
       }
 
       .page {
-        padding-left: 2rem;
         width: calc(100% - $manuWidth);
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
 
         .main-content-loader {
           position: absolute;
@@ -56,10 +52,14 @@
 
         .page-content {
           height: 100%;
+          display: flex;
+          flex-direction: column;
+          position: relative;
           overflow: auto;
 
           .main-content {
             flex-grow: 1;
+            padding: 0 var(--mainPageSidePadding);
           }
 
           .main-footer {

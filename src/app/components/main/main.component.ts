@@ -79,12 +79,12 @@ export class MainComponent implements OnInit {
       return element.slug == this.slug;
     });
     this.currentGridTutorialList?.content.forEach((element) => {
-      this.getExampleCode(element.code);
+      this.getExampleCode(element?.code);
     });
   }
 
-  getExampleCode(gridTutorialCode: string) {
-    if (!this.gridTutorialCodeList.hasOwnProperty(gridTutorialCode)) {
+  getExampleCode(gridTutorialCode: string | undefined) {
+    if (gridTutorialCode && !this.gridTutorialCodeList.hasOwnProperty(gridTutorialCode)) {
       const code = forkJoin({
         htmlCode: this.apiService.getHtmlCode(gridTutorialCode),
         cssCode: this.apiService.getCssCode(gridTutorialCode),

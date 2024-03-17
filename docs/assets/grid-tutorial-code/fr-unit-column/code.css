@@ -1,0 +1,36 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container-1 {
+    display: grid;
+    /* grid items width ratio 1:2:3:4. */
+    grid-template-columns: 1fr 2fr 4fr 3fr;
+}
+
+.container-2 {
+    display: grid;
+    /* 
+    Grid items follow a width ratio of 2:1:3.
+    After the end of the first row containing 3 items, 
+    the same ratio will start for the other 3 items at the next line.
+    */
+    grid-template-columns: 2fr 1fr 3fr;
+}
+
+.container-3 {
+    display: grid;
+    /* 
+    The third & fourth column has a fixed width of 200px & 300px.
+    First two grid items follow a width ratio of 1:2 of the available space.
+    */
+    grid-template-columns: 1fr 2fr 200px 300px;
+}
+
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

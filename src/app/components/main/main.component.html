@@ -1,16 +1,41 @@
 <section class="grid-toturial-section">
-  <h1>
+  <h1 class="heading">
     {{ currentGridTutorialList?.heading }}
   </h1>
+  @if (currentGridTutorialList?.description) {
+  <p class="description">
+    {{currentGridTutorialList?.description}}
+  </p>
+  }
+  @if (currentGridTutorialList?.content?.length) {
   <ul class="grid-toturial-content-list">
     @for (content of currentGridTutorialList?.content; track $index) {
     <li class="grid-toturial-content">
-      @if (content?.code && gridTutorialCodeList[content.code]) {
+      @if (content?.heading) {
+      <hr class="devider">
+      <h2 class="sub-heading">
+        {{content.heading}}
+      </h2>
+      }
+      @if (content?.description) {
+      <p class="description">
+        {{content?.description}}
+      </p>
+      }
+      @if (content?.code && gridTutorialCodeList[content?.code||'']) {
       <div class="example-code-component">
-        <app-run-example [gridTutorialCode]="gridTutorialCodeList[content.code]"></app-run-example>
+        <app-run-example [gridTutorialCode]="gridTutorialCodeList[content?.code||'']"
+          [size]="{editorHeight:content?.editorHeight, outputHeight:content?.outputHeight, outputMinWidth:content?.outputMinWidth}">
+        </app-run-example>
       </div>
+      }
+      @if (content?.explain) {
+      <p class="description">
+        {{content?.explain}}
+      </p>
       }
     </li>
     }
   </ul>
+  }
 </section>

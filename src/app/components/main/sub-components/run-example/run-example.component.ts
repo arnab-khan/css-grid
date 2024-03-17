@@ -3,11 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { gridTutorialCode } from '../../../../interface/grid-toturial-code-list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-run-example',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     MonacoEditorModule
   ],
@@ -21,6 +23,12 @@ export class RunExampleComponent implements OnChanges {
     htmlCode: '',
     cssCode: ''
   }
+
+  @Input() size: {
+    editorHeight?: number;
+    outputHeight?: number;
+    outputMinWidth?: number;
+  } | undefined
 
   outputCode: SafeHtml = '';
   editorOptionsCss = { theme: 'vs-dark', language: 'css' };  //for documentation visit https://www.npmjs.com/package/ngx-monaco-editor-v2

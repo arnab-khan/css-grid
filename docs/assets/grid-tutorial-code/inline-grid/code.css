@@ -1,6 +1,8 @@
 .container {
     /* becomes a grid container */
-    display: grid;
+    display: inline-grid;
+    background-color: aquamarine;
+    padding: 10px;
 }
 
 .item {

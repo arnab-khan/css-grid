@@ -1,0 +1,12 @@
+.container {
+    height: 250px;
+    display: grid;
+    /* Grid last item takes height 40px, and other items follow a height ratio of 2:1:3 of the available space.*/
+    grid-template-rows: 2fr 1fr 3fr 40px;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

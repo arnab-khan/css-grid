@@ -1,15 +1,28 @@
 h2 {
     text-align: center;
+    margin: 0;
 }
 
 .container-1 {
     display: grid;
-    grid-template-columns: 1fr 2fr 4fr 3fr;
+    /* items taking width in px. */
+    grid-template-columns: 100px 200px 400px 300px;
 }
 
 .container-2 {
     display: grid;
-    grid-template-columns: 1fr 2fr 4fr;
+    /* 
+    items taking width in px.
+    After the end of the first row containing 3 items, 
+    the same width will start for the other 3 items at the next line.
+    */
+    grid-template-columns: 100px 200px 20%;
+}
+
+.container-3 {
+    display: grid;
+    /* Each column adjusts its width automatically according to its content. */
+    grid-template-columns: auto auto auto auto;
 }
 
 .item {

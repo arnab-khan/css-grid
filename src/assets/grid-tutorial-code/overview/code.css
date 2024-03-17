@@ -1,4 +1,5 @@
 .container {
+    /* becomes a grid container */
     display: grid;
 }
 
@@ -6,4 +7,5 @@
     text-align: center;
     border: 3px solid #fa6400;
     background-color: #fdd8b5;
+    padding: 5px;
 }

@@ -77,15 +77,12 @@ export class AppComponent implements OnInit {
     this.notAllApiCompleted = apiCalledValueList.some((element) => {
       return !element;
     });
-    console.log('apiCalledList', this.apiCalledList);
-    console.log(this.notAllApiCompleted);
-
+    // console.log('apiCalledList', this.apiCalledList);
     setTimeout(() => {
       setTimeout(() => {
         if (!this.notAllApiCompleted) {
           this.mainLoader = false;
           this.mainPageLoader = false;
-          console.log('apiCalledList', this.apiCalledList);
         }
       }, 0);
     }, 0);

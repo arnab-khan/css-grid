@@ -48,7 +48,7 @@
             {
                 "code": "fr-unit-column",
                 "heading": "Fr unit",
-                "description": "The fr unit in CSS Grid layout stands for \"fractional unit\" and is used to distribute available space proportionally among grid tracks (rows or columns). Grid layout behaves like a ratio between items",
+                "description": "The fr unit in CSS Grid layout stands for \"fractional unit\" and is used to distribute available space proportionally among grid tracks (rows or columns). Grid layout behaves like a ratio between items.",
                 "editorHeight": 500
             },
             {
@@ -59,7 +59,7 @@
             {
                 "code": "repeat",
                 "heading": "Repeat",
-                "description": "The repeat() function in CSS is not exclusive to grid layouts. While it is commonly used with CSS Grid to create repeated patterns of rows and columns",
+                "description": "The repeat() function in CSS is not exclusive to grid layouts. While it is commonly used with CSS Grid to create repeated patterns of rows and columns.",
                 "outputHeight": 280,
                 "outputMinWidth": 0
             }

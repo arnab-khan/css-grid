@@ -1,0 +1,31 @@
+.footer-section {
+    background-color: #1c1c1c;
+    padding: 2rem var(--mainPageSidePadding);
+
+    .heading {
+        padding-bottom: 1rem;
+        color: #008000;
+        text-align: center;
+    }
+
+    .contact-details {
+        width: fit-content;
+        margin: 0 auto;
+
+        .contact-detail {
+            margin-bottom: .5rem;
+
+            .label {
+                color: #f5f5f5;
+            }
+
+            .link {
+                color: #b8860b;
+
+                &:hover {
+                    color: #6666ff;
+                }
+            }
+        }
+    }
+}

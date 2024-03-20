@@ -19,6 +19,8 @@
 
     .main-header {
       flex-shrink: 0;
+      position: relative;
+      z-index: 1;
     }
 
     .content {
@@ -59,7 +61,7 @@
 
           .main-content {
             flex-grow: 1;
-            padding: 0 var(--mainPageSidePadding);
+            padding: 2rem var(--mainPageSidePadding) 3rem;
           }
 
           .main-footer {

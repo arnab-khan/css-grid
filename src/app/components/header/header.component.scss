@@ -1,0 +1,35 @@
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    box-shadow: 0px 0.25rem 0.5rem #0000004d;
+
+    .hamburger-menu {
+        line-height: 0;
+
+        img {
+            height: 2.2rem;
+        }
+    }
+
+    .search {
+        border: 0.125rem solid black;
+        border-radius: .3rem;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        width: 36rem;
+        max-width: 100%;
+        margin-left: 1rem;
+    }
+
+    .about-me {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #000000;
+
+        &:hover {
+            color: #3737ff;
+        }
+    }
+}

@@ -2,18 +2,14 @@
   .heading {
     font-size: 2.5rem;
     color: #006400;
-    margin: 0;
   }
 
   .description {
     font-size: 1.125rem;
-    margin: 2rem 0 0 0;
+    margin-top: 2rem;
   }
 
   .grid-toturial-content-list {
-    padding-left: 0;
-    margin: 0;
-
     .devider {
       margin: 2rem calc(-1 * var(--mainPageSidePadding)) 0;
       background-color: #005f28;
@@ -22,13 +18,12 @@
     }
 
     .grid-toturial-content {
-      list-style-type: none;
       margin-top: 2rem;
 
       .sub-heading {
         font-size: 1.875rem;
         color: #5e7100;
-        margin: 2rem 0 0 0;
+        margin-top: 2rem;
       }
 
       .example-code-component {

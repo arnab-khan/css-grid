@@ -1,7 +1,7 @@
-<ul>
+<ul class="menu-items">
     @for (gridTutorial of gridTutorialList; track $index) {
-    <li>
-        <a routerLink="/{{gridTutorial.slug}}" (click)="onClickMenu()">
+    <li class="menu-item">
+        <a routerLink="/{{gridTutorial.slug}}" (click)="onClickMenu()" class="link">
             {{gridTutorial.heading}}
         </a>
     </li>}

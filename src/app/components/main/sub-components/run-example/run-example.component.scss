@@ -1,3 +1,5 @@
+$editorColor: #1e1e1e;
+
 @mixin editor-heading-text {
   display: block;
   padding: .5rem;
@@ -5,11 +7,12 @@
   text-align: center;
   font-weight: bold;
   font-size: 1rem;
+  background-color: black;
 }
 
 .editor-wrapper {
   position: relative;
-  background-color: #1e1e1e;
+  background-color: $editorColor;
   border-radius: .3rem .3rem 0 0;
 
   .editor-top {
@@ -24,10 +27,14 @@
 
   .editor {
     display: flex;
+    flex-wrap: wrap;
 
     ngx-monaco-editor {
       width: 50%;
-      height: 100%;
+    }
+
+    .editor-title-middle {
+      display: none;
     }
   }
 
@@ -56,6 +63,33 @@
 
     iframe {
       width: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .editor-wrapper {
+    .editor-top {
+      .html {
+        width: 100%;
+      }
+
+      .css {
+        display: none;
+      }
+    }
+
+    .editor {
+      ngx-monaco-editor {
+        width: 100%;
+      }
+
+      .editor-title-middle {
+        display: block;
+        width: 100%;
+        @include editor-heading-text();
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -8,6 +8,7 @@ import { ApiService } from './services/api/api.service';
 import { GridTutorialList } from './interface/grid-tutorial-list';
 import { DataTransferService } from './services/data-transfer/data-transfer.service';
 import { CommonModule } from '@angular/common';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,9 @@ export class AppComponent implements OnInit {
   mainPageLoader = true;
   apiCalledList: { [x: string]: boolean } = {};
   notAllApiCompleted: boolean | undefined;
+  openMenu = true;
+  resetPageIntervel: any;
+  isMobileScreen = false;
 
   constructor(
     private apiService: ApiService,
@@ -41,6 +45,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getGridTutorialList();
     this.checkIfAllApiCallCompletedOtherComponents();
+    this.windoResize();
+    this.resetMenuOpen();
   }
 
   getGridTutorialList() {
@@ -80,7 +86,7 @@ export class AppComponent implements OnInit {
     // console.log('apiCalledList', this.apiCalledList);
     setTimeout(() => {
       setTimeout(() => {
-        if (!this.notAllApiCompleted) {
+        if (!this.notAllApiCompleted) {          
           this.mainLoader = false;
           this.mainPageLoader = false;
         }
@@ -96,5 +102,39 @@ export class AppComponent implements OnInit {
         this.checkIfAllApiCallCompleted({ clickedMenu: true });
       }, 0);
     }, 0);
+    if (this.isMobileScreen) {
+      this.openMenu = false;
+    }
+  }
+
+  clickHamburgerIcon() {
+    this.openMenu = !this.openMenu;
+    setTimeout(() => {
+      this.dataTransferService.setRefrashEditor(true);
+    }, 500);
+  }
+
+
+
+  windoResize() {
+    fromEvent(window, 'resize').subscribe(() => {
+      this.resetMenuOpen();
+      this.resetPage();
+    })
+  }
+
+  resetPage() {
+    if (this.resetPageIntervel) {
+      clearTimeout(this.resetPageIntervel);
+    }
+    this.resetPageIntervel = setInterval(() => {
+      this.dataTransferService.setRefrashEditor(true);
+      clearTimeout(this.resetPageIntervel);
+    }, 500);
+  }
+
+  resetMenuOpen() {
+    this.isMobileScreen = window.innerWidth > 991 ? false : true
+    this.openMenu = this.isMobileScreen ? false : true;
   }
 }

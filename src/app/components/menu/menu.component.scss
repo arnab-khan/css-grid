@@ -1,0 +1,13 @@
+.menu-items {
+    .menu-item {
+        margin-bottom: .25rem;
+        .link {
+            color: #603600;
+            font-size: 1.125rem;
+
+            &:hover {
+                color: #3737ff;
+            }
+        }
+    }
+}

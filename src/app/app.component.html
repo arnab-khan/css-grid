@@ -4,11 +4,13 @@
   </div>
   <div class="container" [ngStyle]="{ display: mainLoader ? 'none' : 'flex' }">
     <header class="main-header">
-      <app-header></app-header>
+      <app-header (clickHamburgerIcon)="clickHamburgerIcon()"></app-header>
     </header>
-    <div class="content">
+    <div class="content" [ngClass]="{'open':openMenu}">
       <nav class="menu">
-        <app-menu [gridTutorialList]="gridTutorialList" (clickedMenu)="clickedMenu()"></app-menu>
+        <div class="menu-inner">
+          <app-menu [gridTutorialList]="gridTutorialList" (clickedMenu)="clickedMenu()"></app-menu>
+        </div>
       </nav>
       <div class="page">
         <div class="main-content-loader" [ngStyle]="{ display: mainPageLoader ? 'flex' : 'none' }">

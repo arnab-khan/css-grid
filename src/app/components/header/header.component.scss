@@ -6,6 +6,7 @@
     box-shadow: 0px 0.25rem 0.5rem #0000004d;
 
     .hamburger-menu {
+        flex-shrink: 0;
         line-height: 0;
 
         img {
@@ -27,9 +28,18 @@
         font-size: 1rem;
         font-weight: bold;
         color: #000000;
+        flex-shrink: 0;
+        margin-left: 1rem;
 
         &:hover {
             color: #3737ff;
         }
+    }
+}
+
+
+@media (max-width: 481px) {
+    .about-me {
+        display: none;
     }
 }

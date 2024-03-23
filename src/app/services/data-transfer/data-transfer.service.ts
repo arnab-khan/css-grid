@@ -23,4 +23,12 @@ export class DataTransferService {
   getApiCalledList(): Observable<{ [x: string]: boolean }> {
     return this.apiCalledList.asObservable();
   }
+
+  private refrashEditor = new BehaviorSubject<boolean>(false);
+  setRefrashEditor(data: boolean) {
+    this.refrashEditor.next(data);
+  }
+  getRefrashEditor(): Observable<boolean> {
+    return this.refrashEditor.asObservable();
+  }
 }

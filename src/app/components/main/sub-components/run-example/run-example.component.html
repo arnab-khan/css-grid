@@ -1,18 +1,22 @@
 <div class="editor-wrapper">
   <div class="editor-top">
-    <span>
+    <span class="html">
       HTML
     </span>
-    <span>
+    <span class="css">
       CSS
     </span>
   </div>
-  <div class="editor" [ngStyle]="{height:(size?.editorHeight??200)+'px'}">
+  <div class="editor">
     <ngx-monaco-editor [options]="editorOptionsHtml" [(ngModel)]="gridTutorialCode.htmlCode"
-      (ngModelChange)="changeHtml($event)" (onInit)="editorOnInit()">
+      [ngStyle]="{height:(size?.editorHeight??200)+'px'}" (ngModelChange)="changeHtml($event)"
+      (onInit)="editorOnInit()">
     </ngx-monaco-editor>
+    <div class="editor-title-middle">
+      CSS
+    </div>
     <ngx-monaco-editor [options]="editorOptionsCss" [(ngModel)]="gridTutorialCode.cssCode"
-      (ngModelChange)="changeCss($event)" (onInit)="editorOnInit()">
+      [ngStyle]="{height:(size?.editorHeight??200)+'px'}" (ngModelChange)="changeCss($event)" (onInit)="editorOnInit()">
     </ngx-monaco-editor>
   </div>
   @if (editorLoader<0) { <div class="loader">

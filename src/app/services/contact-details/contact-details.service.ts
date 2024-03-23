@@ -28,8 +28,14 @@ export class ContactDetailsService {
     whatsapp: {
       label: 'WhatsApp',
       value: '+91 7407930967',
-      url: 'https://wa.me/917407930967"',
+      url: 'https://wa.me/917407930967',
       order: 2
+    },
+    github: {
+      label: 'GitHub',
+      value: 'https://github.com/arnab-khan',
+      url: 'https://github.com/arnab-khan',
+      order: 4
     }
   }
 

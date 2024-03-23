@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ContactDetailsService } from '../../services/contact-details/contact-details.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { ContactDetailsService } from '../../services/contact-details/contact-de
 })
 
 export class HeaderComponent implements OnInit {
+
+  @Output() clickHamburgerIcon = new EventEmitter<boolean>();
 
   linkedinUrl: string | undefined;
 

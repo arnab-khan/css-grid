@@ -30,15 +30,28 @@
       $manuWidth: 12rem;
 
       .menu {
-        width: $manuWidth;
-        background-color: grey;
+        width: 0;
+        background-color: #fee6ff;
         height: 100%;
         overflow: auto;
+        position: sticky;
+        top: 0;
+        left: 0;
+        transition-duration: .5s;
+        overflow: hidden;
+
+        .menu-inner {
+          width: $manuWidth;
+          padding: 1.5rem 1rem;
+        }
       }
 
       .page {
-        width: calc(100% - $manuWidth);
+        width: 100%;
         height: 100%;
+        transition-duration: .5s;
+        overflow-x: hidden;
+        position: relative;
 
         .main-content-loader {
           position: absolute;
@@ -57,7 +70,6 @@
           display: flex;
           flex-direction: column;
           position: relative;
-          overflow: auto;
 
           .main-content {
             flex-grow: 1;
@@ -66,6 +78,32 @@
 
           .main-footer {
             flex-shrink: 0;
+          }
+        }
+      }
+
+      &.open {
+
+        .menu {
+          width: $manuWidth;
+        }
+
+        .page {
+          width: calc(100% - $manuWidth);
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 481px) {
+  .outer-wrap {
+    .container {
+      .content {
+        .page {
+          .page-content {
+            width: 100vw;
           }
         }
       }

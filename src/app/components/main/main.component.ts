@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GridTutorialList } from '../../interface/grid-tutorial-list';
 import { NgComponentOutlet } from '@angular/common';
 import { RunExampleComponent } from './sub-components/run-example/run-example.component';
@@ -25,6 +25,7 @@ export class MainComponent implements OnInit {
   gridTutorialCodeList: gridTutorialCodeList = {};
   gridTutorialComponents: { [key: string]: any } = {};
   slug: string | undefined;
+  showEditor = true;
 
   constructor(
     private apiService: ApiService,
@@ -37,6 +38,7 @@ export class MainComponent implements OnInit {
     this.getSlug();
     this.getGridTutorialList();
     this.changrRouter();
+    this.refrashEditor();
   }
 
   changrRouter() {
@@ -107,5 +109,18 @@ export class MainComponent implements OnInit {
         },
       });
     }
+  }
+
+  refrashEditor() {
+    this.dataTransferService.getRefrashEditor().subscribe({
+      next: (event: boolean) => {
+        if (event) {
+          this.showEditor = false;
+          setTimeout(() => {
+            this.showEditor = true;            
+          }, 0);
+        }
+      },
+    });
   }
 }

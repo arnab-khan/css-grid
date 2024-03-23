@@ -22,7 +22,7 @@
         {{content?.description}}
       </p>
       }
-      @if (content?.code && gridTutorialCodeList[content?.code||'']) {
+      @if (content?.code && gridTutorialCodeList[content?.code||''] && showEditor) {
       <div class="example-code-component">
         <app-run-example [gridTutorialCode]="gridTutorialCodeList[content?.code||'']"
           [size]="{editorHeight:content?.editorHeight, outputHeight:content?.outputHeight, outputMinWidth:content?.outputMinWidth}">

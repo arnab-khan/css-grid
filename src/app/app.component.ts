@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
     // console.log('apiCalledList', this.apiCalledList);
     setTimeout(() => {
       setTimeout(() => {
-        if (!this.notAllApiCompleted) {          
+        if (!this.notAllApiCompleted) {
           this.mainLoader = false;
           this.mainPageLoader = false;
         }

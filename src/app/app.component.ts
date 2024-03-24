@@ -121,8 +121,6 @@ export class AppComponent implements OnInit {
     }, 500);
   }
 
-
-
   windoResize() {
     fromEvent(window, 'resize').subscribe(() => {
       this.resetMenuOpen();
@@ -146,15 +144,16 @@ export class AppComponent implements OnInit {
   }
 
   scrollToSearchElement() {
-    setTimeout(() => {
-      this.urlParams = this.activatedRoute.snapshot.queryParams;
-      if (this.urlParams?.['scrollElementClass']) {
-        const scrollElement = document.querySelector(this.urlParams['scrollElementClass']);
-        if (scrollElement) {
-          scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-      // console.log('call');
-    }, 0);
+    this.urlParams = this.activatedRoute.snapshot.queryParams;
+    if (this.urlParams?.['scrollElementClass']) {
+      this.scrollToTop(this.urlParams['scrollElementClass']);
+    }
+  }
+
+  scrollToTop(elementClass: string) {
+    const scrollElement = document.querySelector(elementClass);
+    if (scrollElement) {
+      scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

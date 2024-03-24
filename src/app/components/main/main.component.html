@@ -1,4 +1,5 @@
-<section class="grid-toturial-section" ngClass="toturial_scroll_{{currentGridTutorialList?.code}}">
+<section class="grid-toturial-section" ngClass="toturial_scroll_{{currentGridTutorialList?.code}}"
+  [ngStyle]="{display:slug=='404'?'none':'block'}">
   <h1 class="heading-font heading">
     {{ currentGridTutorialList?.heading }}
   </h1>
@@ -39,3 +40,6 @@
   </ul>
   }
 </section>
+@if (slug=='404') {
+<app-page-not-found></app-page-not-found>
+}

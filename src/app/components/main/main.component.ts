@@ -6,10 +6,8 @@ import { forkJoin } from 'rxjs';
 import { ApiService } from '../../services/api/api.service';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { DataTransferService } from '../../services/data-transfer/data-transfer.service';
-import {
-  gridTutorialCode,
-  gridTutorialCodeList,
-} from '../../interface/grid-toturial-code-list';
+import { gridTutorialCode, gridTutorialCodeList } from '../../interface/grid-toturial-code-list';
+import { PageNotFoundComponent } from './sub-components/page-not-found/page-not-found.component';
 
 @Component({
   selector: 'app-main',
@@ -17,7 +15,8 @@ import {
   imports: [
     CommonModule,
     NgComponentOutlet,
-    RunExampleComponent
+    RunExampleComponent,
+    PageNotFoundComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
@@ -84,9 +83,14 @@ export class MainComponent implements OnInit {
     this.currentGridTutorialList = this.gridTutorialList.find((element) => {
       return element.slug == this.slug;
     });
-    this.currentGridTutorialList?.content.forEach((element) => {
-      this.getExampleCode(element?.code);
-    });
+    // console.log('currentGridTutorialList', this.currentGridTutorialList);
+    if (this.currentGridTutorialList) {
+      this.currentGridTutorialList?.content.forEach((element) => {
+        this.getExampleCode(element?.code);
+      });
+    } else {
+      this.router.navigate(['/404']);
+    }
   }
 
   getExampleCode(gridTutorialCode: string | undefined) {

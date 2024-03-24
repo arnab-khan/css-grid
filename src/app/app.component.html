@@ -1,10 +1,13 @@
+<div class="heading-font font-load">
+  font load
+</div>
 <div class="outer-wrap">
   <div class="loader" [ngStyle]="{ display: mainLoader ? 'flex' : 'none' }">
     <img src="assets/images/loader/loader-green.svg" alt="loader" />
   </div>
   <div class="container" [ngStyle]="{ display: mainLoader ? 'none' : 'flex' }">
     <header class="main-header">
-      <app-header (clickHamburgerIcon)="clickHamburgerIcon()"></app-header>
+      <app-header (clickHamburgerIcon)="clickHamburgerIcon()" (clickedSearchItem)="clickedMenu()"></app-header>
     </header>
     <div class="content" [ngClass]="{'open':openMenu}">
       <nav class="menu">

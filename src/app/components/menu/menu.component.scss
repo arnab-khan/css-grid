@@ -1,13 +1,24 @@
 .menu-items {
     .menu-item {
         margin-bottom: .25rem;
+
         .link {
             color: #603600;
             font-size: 1.125rem;
+            padding: 0 .5rem;
+            display: block;
 
             &:hover {
                 color: #3737ff;
             }
+
+            &.active {
+                background-color: #1eff4d;
+                color: #0000ff;
+                border-radius: .5rem;
+                font-weight: bold;
+            }
+
         }
     }
 }

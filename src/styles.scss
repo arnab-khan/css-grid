@@ -5,6 +5,7 @@
 }
 
 * {
+    font-family: "Poppins", sans-serif;
     line-height: 1.4em;
     font-weight: normal;
     box-sizing: border-box;
@@ -49,14 +50,11 @@ p {
 }
 
 .heading-font {
-    font-family: "Rubik Glitch Pop", system-ui;
-    font-weight: bold;
-    letter-spacing: .1rem;
+    font-family: "Rubik Moonrocks", sans-serif;
 }
 
 html {
     font-size: calc(0.125vw + 13.6px); //responsive font size 16px for 1920px screen and 14px for 320px screen
-    font-family: "Poppins", sans-serif;
     background-color: var(--mainBackgroundColor);
 
     body {

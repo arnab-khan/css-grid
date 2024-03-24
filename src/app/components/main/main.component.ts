@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GridTutorialList } from '../../interface/grid-tutorial-list';
-import { NgComponentOutlet } from '@angular/common';
+import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { RunExampleComponent } from './sub-components/run-example/run-example.component';
 import { forkJoin } from 'rxjs';
 import { ApiService } from '../../services/api/api.service';
@@ -14,7 +14,11 @@ import {
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [NgComponentOutlet, RunExampleComponent],
+  imports: [
+    CommonModule,
+    NgComponentOutlet,
+    RunExampleComponent
+  ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
@@ -117,7 +121,7 @@ export class MainComponent implements OnInit {
         if (event) {
           this.showEditor = false;
           setTimeout(() => {
-            this.showEditor = true;            
+            this.showEditor = true;
           }, 0);
         }
       },

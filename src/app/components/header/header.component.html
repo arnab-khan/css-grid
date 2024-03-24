@@ -2,7 +2,28 @@
     <button type="button" class="hamburger-menu" (click)="clickHamburgerIcon.emit()">
         <img src="assets/images/icons/hamburger-menu.svg" alt="menu">
     </button>
-    <input type="search" name="search" class="search" placeholder="Search">
+    <div class="search" (mouseleave)="searchItems=[]">
+        <input type="search" name="search" placeholder="Search" autocomplete="off" (input)="search($event)"
+            (mouseenter)="search($event)">
+        @if (searchItems.length) {
+        <ul class="search-items">
+            @for (searchItem of searchItems; track $index) {
+            <li class="search-item">
+                <hr class="line">
+                <button type="button" class="button"
+                    (click)="goToSearchItem(searchItem.router, searchItem.scrollElementClass)">
+                    <h3 class="title">
+                        {{searchItem.title}}
+                    </h3>
+                    <p class="content">
+                        {{searchItem.content}}
+                    </p>
+                </button>
+            </li>
+            }
+        </ul>
+        }
+    </div>
     <a [href]="linkedinUrl" target="_blank" class="about-me">
         About Me
     </a>

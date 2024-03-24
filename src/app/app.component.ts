@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Params, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -36,13 +36,17 @@ export class AppComponent implements OnInit {
   openMenu = true;
   resetPageIntervel: any;
   isMobileScreen = false;
+  pageLoaded = false;
+  urlParams: Params | undefined;
 
   constructor(
     private apiService: ApiService,
-    private dataTransferService: DataTransferService
+    private dataTransferService: DataTransferService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.urlParams = this.activatedRoute.snapshot.queryParams;
     this.getGridTutorialList();
     this.checkIfAllApiCallCompletedOtherComponents();
     this.windoResize();
@@ -86,15 +90,18 @@ export class AppComponent implements OnInit {
     // console.log('apiCalledList', this.apiCalledList);
     setTimeout(() => {
       setTimeout(() => {
-        if (!this.notAllApiCompleted) {
+        if (!this.notAllApiCompleted && !this.pageLoaded) {
           this.mainLoader = false;
           this.mainPageLoader = false;
+          this.scrollToSearchElement();
+          this.pageLoaded = true;
         }
       }, 0);
     }, 0);
   }
 
   clickedMenu() {
+    this.pageLoaded = false;
     this.mainPageLoader = true;
     this.checkIfAllApiCallCompleted({ clickedMenu: false });
     setTimeout(() => {
@@ -134,7 +141,20 @@ export class AppComponent implements OnInit {
   }
 
   resetMenuOpen() {
-    this.isMobileScreen = window.innerWidth > 991 ? false : true
+    this.isMobileScreen = window.innerWidth > 991 ? false : true;
     this.openMenu = this.isMobileScreen ? false : true;
+  }
+
+  scrollToSearchElement() {
+    setTimeout(() => {
+      this.urlParams = this.activatedRoute.snapshot.queryParams;
+      if (this.urlParams?.['scrollElementClass']) {
+        const scrollElement = document.querySelector(this.urlParams['scrollElementClass']);
+        if (scrollElement) {
+          scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      // console.log('call');
+    }, 0);
   }
 }

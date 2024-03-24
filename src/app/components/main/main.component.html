@@ -1,4 +1,4 @@
-<section class="grid-toturial-section">
+<section class="grid-toturial-section" ngClass="toturial_scroll_{{currentGridTutorialList?.code}}">
   <h1 class="heading-font heading">
     {{ currentGridTutorialList?.heading }}
   </h1>
@@ -10,7 +10,7 @@
   @if (currentGridTutorialList?.content?.length) {
   <ul class="grid-toturial-content-list">
     @for (content of currentGridTutorialList?.content; track $index) {
-    <li class="grid-toturial-content">
+    <li class="grid-toturial-content" ngClass="toturial_scroll_{{currentGridTutorialList?.code}}_{{content?.code}}">
       @if (content?.heading) {
       <hr class="devider">
       <h2 class="heading-font sub-heading">

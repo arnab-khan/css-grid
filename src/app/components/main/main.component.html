@@ -4,9 +4,7 @@
     {{ currentGridTutorialList?.heading }}
   </h1>
   @if (currentGridTutorialList?.description) {
-  <p class="description">
-    {{currentGridTutorialList?.description}}
-  </p>
+  <p class="description" [innerHTML]="currentGridTutorialList?.description"></p>
   }
   @if (currentGridTutorialList?.content?.length) {
   <ul class="grid-toturial-content-list">
@@ -19,9 +17,7 @@
       </h2>
       }
       @if (content?.description) {
-      <p class="description">
-        {{content?.description}}
-      </p>
+      <p [innerHTML]="content?.description" class="description"></p>
       }
       @if (content?.code && gridTutorialCodeList[content?.code||''] && showEditor) {
       <div class="example-code-component">

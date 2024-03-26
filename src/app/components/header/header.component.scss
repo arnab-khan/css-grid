@@ -21,7 +21,7 @@
         width: 36rem;
 
         input {
-            border: 0.125rem solid black;
+            border: 0.125rem solid #000000;
             border-radius: .3rem;
             padding: .5rem 1rem;
             font-size: 1rem;
@@ -57,12 +57,21 @@
                     padding: .5rem 1rem;
                     text-align: left;
 
+                    .title {
+                        font-size: 1.25rem;
+                    }
+
                     .content {
+                        font-size: 1rem;
                         display: -webkit-box;
                         /* 1 Number of lines to show */
                         -webkit-line-clamp: 1;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
+                    }
+
+                    &:hover {
+                        background-color: #829460;
                     }
                 }
             }

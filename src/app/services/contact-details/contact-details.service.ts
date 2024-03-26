@@ -9,8 +9,8 @@ export class ContactDetailsService {
   contactDetails: ContactDetails = {
     linkedin: {
       label: 'LinkedIn',
-      value: 'https://www.linkedin.com/in/arnab-khan-14868318b',
-      url: 'https://www.linkedin.com/in/arnab-khan-14868318b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      value: 'https://www.linkedin.com/in/khan-arnab',
+      url: 'https://www.linkedin.com/in/khan-arnab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
       order: 3
     },
     email: {

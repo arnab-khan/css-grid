@@ -59,7 +59,38 @@ export class RunExampleComponent implements OnChanges {
 
   setOutputCode() {
     const outputCode = `
-      <style>${this.gridTutorialCode.cssCode}</style>
+      <style>
+        /* ========== start scrollbar customise ========== */
+        @media (min-width: 481px) {
+          :root {
+              --scrollbar-track-color: #f5f5f5;
+              --scrollbar-thumb-color: #888;
+              --scrollbar-shadow-color: rgba(0, 0, 0, 0.5);
+          }
+          html {
+              height: 100%;
+              overflow-y: auto;
+          }
+          html::-webkit-scrollbar {
+              width: .7rem;
+              height: .7rem;
+          }
+          html::-webkit-scrollbar-track {
+              border-radius: 0.625rem;
+              box-shadow: inset 0 0 0.375rem var(--scrollbar-shadow-color);
+              background-color: var(--scrollbar-track-color);
+          }
+          html::-webkit-scrollbar-thumb {
+              background-color: var(--scrollbar-thumb-color);
+              border-radius: 0.625rem;
+          }
+          html::-webkit-scrollbar-thumb:hover {
+              background-color: var(--scrollbar-thumb-color);
+          }
+        }
+        /* ========== end scrollbar customise ========== */
+        ${this.gridTutorialCode.cssCode}
+      </style>
       ${this.gridTutorialCode.htmlCode}
     `;
     // Sanitize the output HTML

@@ -64,5 +64,25 @@
                 "outputMinWidth": 0
             }
         ]
+    },
+    {
+        "code": "grid-gap",
+        "slug": "grid-gap",
+        "heading": "Grid gap",
+        "description": "Grid gaps (or gutters) are the spaces between grid tracks (rows and columns) within a grid layout. They provide visual separation between grid items and improve readability and aesthetics.",
+        "content": [
+            {
+                "code": "grid-gap",
+                "outputHeight": 200,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "grid-gap-others",
+                "description": "If you use the value normal, the browser will use its default gap size, typically equivalent to 1em. <br><br> The auto value for gap will not apply any gap between grid tracks. It's equivalent to setting the gap to 0. <br><br> Using grid-gap: inherit; sets the gap between grid tracks (rows and columns) to inherit the value from its parent element. <br><br> Negative values for the gap will show error",
+                "editorHeight": 500,
+                "outputHeight": 500,
+                "outputMinWidth": 0
+            }
+        ]
     }
 ]

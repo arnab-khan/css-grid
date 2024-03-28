@@ -96,10 +96,49 @@
 
         .menu {
           width: $manuWidth;
+
+          &.menu-mobile {
+            display: none;
+          }
         }
 
         .page {
           width: calc(100% - $manuWidth);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .outer-wrap {
+    height: auto;
+
+    .container {
+      position: relative;
+
+      .main-header {
+        position: sticky;
+        top: 0;
+      }
+
+      .content {
+        position: sticky;
+        top: 0;
+
+        .menu {
+          &.web-menu {
+            visibility: hidden;
+          }
+
+          &.menu-mobile {
+            display: block !important;
+            position: fixed;
+            padding-top: 3rem;
+            top: 0;
+            left: 0;
+            z-index: 1;
+          }
         }
       }
     }

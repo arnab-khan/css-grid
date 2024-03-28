@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -27,6 +27,8 @@ import { fromEvent } from 'rxjs';
 })
 
 export class AppComponent implements OnInit {
+
+  @ViewChild('headerElement') headerElement: ElementRef | undefined;
 
   gridTutorialList: GridTutorialList[] = [];
   mainLoader = true;
@@ -153,7 +155,22 @@ export class AppComponent implements OnInit {
   scrollToTop(elementClass: string) {
     const scrollElement = document.querySelector(elementClass);
     if (scrollElement) {
-      scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.innerWidth > 991) {
+        scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({
+          top: 0
+        });
+        const elementTop: number = scrollElement.getBoundingClientRect().top;
+        if (this.headerElement) {
+          const headerElement: HTMLElement = this.headerElement.nativeElement;
+          const headerHeight = headerElement.getBoundingClientRect().bottom - headerElement.getBoundingClientRect().top;
+          window.scrollTo({
+            top: elementTop - headerHeight,
+            behavior: 'smooth'
+          });
+        }
+      }
     }
   }
 }

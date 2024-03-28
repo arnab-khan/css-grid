@@ -6,11 +6,18 @@
     <img src="assets/images/loader/loader-green.svg" alt="loader" />
   </div>
   <div class="container" [ngStyle]="{ display: mainLoader ? 'none' : 'flex' }">
-    <header class="main-header">
+    <header #headerElement class="main-header">
       <app-header (clickHamburgerIcon)="clickHamburgerIcon()" (clickedSearchItem)="clickedMenu()"></app-header>
     </header>
     <div class="content" [ngClass]="{'open':openMenu}">
-      <nav class="menu">
+      <nav class="menu web-menu">
+        <div class="menu-inner">
+          <app-menu [gridTutorialList]="gridTutorialList"
+            (clickedMenu)="clickedMenu(); scrollToTop('.grid-toturial-section')">
+          </app-menu>
+        </div>
+      </nav>
+      <nav class="menu menu-mobile">
         <div class="menu-inner">
           <app-menu [gridTutorialList]="gridTutorialList"
             (clickedMenu)="clickedMenu(); scrollToTop('.grid-toturial-section')">

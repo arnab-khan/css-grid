@@ -1,32 +1,49 @@
-h2 {
-    text-align: center;
-    margin: 0;
-}
-
-.container-1 {
+.container {
     display: grid;
-    /* items taking width in px. */
-    grid-template-columns: 100px 200px 400px 300px;
-}
-
-.container-2 {
-    display: grid;
-    /* 
-    items taking width in px.
-    After the end of the first row containing 3 items, 
-    the same width will start for the other 3 items at the next line.
-    */
-    grid-template-columns: 100px 200px 20%;
-}
-
-.container-3 {
-    display: grid;
-    /* Each column adjusts its width automatically according to its content. */
-    grid-template-columns: auto auto auto auto;
 }
 
 .item {
     text-align: center;
     border: 3px solid #fa6400;
     background-color: #fdd8b5;
+}
+
+.item-1 {
+    /* Grid item starts at column line 2 and ends at column line 3 */
+    grid-column: 2 / 6;
+}
+
+.item-2 {
+    /* Grid item starts at column line 1 and ends at column line 4 */
+    grid-column: 1 / 4;
+}
+
+.item-3 {
+    /* Grid item starts at column line 4 and ends at column line 6 */
+    grid-column: 4 / 6;
+}
+
+.item-4 {
+    /* Grid item starts at column line 1 and ends at column line 11 */
+    grid-column: 1 / 11;
+}
+
+.item-5 {
+    /* Grid item starts at column line -1 and ends at column line -4 */
+    grid-column: -1 / -4;
+}
+
+.item-6 {
+    /* Grid item starts at column line -2 and ends at column line 3 */
+    grid-column: -2 / 3;
+}
+
+.item-7 {
+    /* Grid item starts at column line -3 and ends at column line 3 */
+    grid-column: -3 / 3;
+}
+
+.item-8 {
+    /* Grid item starts at column line 0 is invalid */
+    grid-column: 0 / 3;
 }

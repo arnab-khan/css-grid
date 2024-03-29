@@ -1,0 +1,32 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container-1 {
+    display: grid;
+    /* items taking width in px. */
+    grid-template-columns: 100px 200px 400px 300px;
+}
+
+.container-2 {
+    display: grid;
+    /* 
+    items taking width in px.
+    After the end of the first row containing 3 items, 
+    the same width will start for the other 3 items at the next line.
+    */
+    grid-template-columns: 100px 200px 20%;
+}
+
+.container-3 {
+    display: grid;
+    /* Each column adjusts its width automatically according to its content. */
+    grid-template-columns: auto auto auto auto;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

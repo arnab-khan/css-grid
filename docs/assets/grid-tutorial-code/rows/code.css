@@ -1,10 +1,30 @@
 .container {
     display: grid;
-    grid-template-rows: 25px 50px 100px 40px;
+    grid-template-columns: auto auto auto auto;
 }
 
 .item {
     text-align: center;
     border: 3px solid #fa6400;
     background-color: #fdd8b5;
+}
+
+.item-1 {
+    /* Grid item starts at row line 2 and ends at row line 3 */
+    grid-row: 2 / 6;
+}
+
+.item-2 {
+    /* Grid item starts at row line 1 and ends at row line 4 */
+    grid-row: 1 / 4;
+}
+
+.item-3 {
+    /* Grid item starts at row line 4 and ends at row line 6 */
+    grid-row: 4 / 6;
+}
+
+.item-4 {
+    /* Grid item starts at row line 4 and ends at row line 11 */
+    grid-row: 1 / 11;
 }

@@ -27,32 +27,32 @@
         ]
     },
     {
-        "code": "rows-and-columns",
-        "slug": "rows-and-columns",
-        "heading": "Rows and Columns",
+        "code": "template-rows-and-columns",
+        "slug": "template-rows-and-columns",
+        "heading": "Template Rows and Columns",
         "description": "You can define the size of rows and columns using various units like pixels, percentages, or fractions.",
         "content": [
             {
-                "code": "rows",
-                "heading": "Rows",
+                "code": "template-rows",
+                "heading": "Template Rows",
                 "description": "Rows in CSS Grid are horizontal tracks that run along the vertical axis of the grid. They define the vertical space in which grid items are placed. Each row can have a specific height, or it can adjust its height dynamically based on the content or available space.",
                 "outputMinWidth": 0
             },
             {
-                "code": "columns",
-                "heading": "Columns",
+                "code": "template-columns",
+                "heading": "Template Columns",
                 "description": "Columns in CSS Grid are vertical tracks that run along the horizontal axis of the grid. They define the horizontal space in which grid items are placed. Each column can have a specific width, or it can adjust its width dynamically based on the content or available space.",
                 "editorHeight": 400,
                 "outputMinWidth": 1100
             },
             {
-                "code": "fr-unit-column",
+                "code": "fr-unit-template-column",
                 "heading": "Fr unit",
                 "description": "The fr unit in CSS Grid layout stands for \"fractional unit\" and is used to distribute available space proportionally among grid tracks (rows or columns). Grid layout behaves like a ratio between items.",
                 "editorHeight": 500
             },
             {
-                "code": "fr-unit-row",
+                "code": "fr-unit-template-row",
                 "outputHeight": 280,
                 "outputMinWidth": 0
             },
@@ -66,6 +66,27 @@
         ]
     },
     {
+        "code": "rows-and-columns",
+        "slug": "rows-and-columns",
+        "heading": "Rows and Columns",
+        "description": "The grid-row and grid-column properties in CSS Grid layout are used to explicitly define the placement of grid items along the row and column axes within a grid container.",
+        "content": [
+            {
+                "code": "rows",
+                "heading": "Rows",
+                "description": "The grid-row property is used to specify the grid lines on which a grid item starts and ends along the row axis.",
+                "editorHeight": 300
+            },
+            {
+                "code": "columns",
+                "heading": "Columns",
+                "description": "The grid-column property is used to specify the grid lines on which a grid item starts and ends along the column axis.",
+                "editorHeight": 400,
+                "outputHeight": 200
+            }
+        ]
+    },
+    {
         "code": "grid-gap",
         "slug": "grid-gap",
         "heading": "Grid gap",
@@ -73,7 +94,8 @@
         "content": [
             {
                 "code": "grid-gap",
-                "outputHeight": 200,
+                "editorHeight": 300,
+                "outputHeight": 400,
                 "outputMinWidth": 0
             },
             {

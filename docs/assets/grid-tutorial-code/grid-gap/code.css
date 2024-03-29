@@ -1,10 +1,19 @@
-.container {
+.container-1 {
     /* becomes a grid container */
     display: grid;
-    grid-template-rows: 50px 100px;
+    grid-template-rows: 30px 40px;
     grid-template-columns: 1fr 2fr;
     /* 20px gap for both rows and columns */
     grid-gap: 20px;
+}
+
+.container-2 {
+    /* becomes a grid container */
+    display: grid;
+    grid-template-rows: 30px 40px;
+    grid-template-columns: 1fr 2fr;
+    /* 20px gap for both rows and columns */
+    gap: 20px;
 }
 
 .item {

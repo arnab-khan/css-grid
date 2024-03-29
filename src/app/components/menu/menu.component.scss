@@ -1,6 +1,10 @@
 .menu-items {
     .menu-item {
-        margin-bottom: .25rem;
+        padding: .25rem 0;
+
+        &:nth-child(n+2) {
+            border-top: 0.063rem solid #000000;
+        }
 
         .link {
             color: #603600;

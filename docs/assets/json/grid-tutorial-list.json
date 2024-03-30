@@ -16,7 +16,7 @@
     {
         "code": "inline-grid",
         "slug": "inline-grid",
-        "heading": "Inline grid",
+        "heading": "Inline Grid",
         "description": "The inline-grid value for the display property in CSS allows you to create a grid layout where the container behaves like an inline-level element, similar to inline elements like <span>.",
         "content": [
             {
@@ -66,30 +66,9 @@
         ]
     },
     {
-        "code": "rows-and-columns",
-        "slug": "rows-and-columns",
-        "heading": "Rows and Columns",
-        "description": "The grid-row and grid-column properties in CSS Grid layout are used to explicitly define the placement of grid items along the row and column axes within a grid container.",
-        "content": [
-            {
-                "code": "rows",
-                "heading": "Rows",
-                "description": "The grid-row property is used to specify the grid lines on which a grid item starts and ends along the row axis.",
-                "editorHeight": 300
-            },
-            {
-                "code": "columns",
-                "heading": "Columns",
-                "description": "The grid-column property is used to specify the grid lines on which a grid item starts and ends along the column axis.",
-                "editorHeight": 400,
-                "outputHeight": 200
-            }
-        ]
-    },
-    {
         "code": "grid-gap",
         "slug": "grid-gap",
-        "heading": "Grid gap",
+        "heading": "Grid Gap",
         "description": "Grid gaps (or gutters) are the spaces between grid tracks (rows and columns) within a grid layout. They provide visual separation between grid items and improve readability and aesthetics.",
         "content": [
             {
@@ -104,6 +83,64 @@
                 "editorHeight": 500,
                 "outputHeight": 500,
                 "outputMinWidth": 0
+            },
+            {
+                "code": "row-gap",
+                "heading": "Row Gap",
+                "description": "Row-gap sets the size of the gap between rows.",
+                "editorHeight": 200,
+                "outputHeight": 100,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "column-gap",
+                "heading": "Column Gap",
+                "description": "column-gap sets the size of the gap between columns.",
+                "editorHeight": 200,
+                "outputHeight": 120,
+                "outputMinWidth": 0
+            }
+        ]
+    },
+    {
+        "code": "rows-and-columns",
+        "slug": "rows-and-columns",
+        "heading": "Row and Column",
+        "description": "The grid-row and grid-column properties in CSS Grid layout are used to explicitly define the placement of grid items along the row and column axes within a grid container.",
+        "content": [
+            {
+                "code": "rows",
+                "heading": "Row",
+                "description": "The grid-row property is used to specify the grid lines on which a grid item starts and ends along the row axis.",
+                "editorHeight": 300
+            },
+            {
+                "code": "rows-span",
+                "heading": "Row Span",
+                "description": "The \"span\" value is often used with \"grid-row\" to specify how many rows a grid item should span. For example, if you set grid-row: span 2;, the grid item will occupy two rows in the grid.",
+                "editorHeight": 300,
+                "outputHeight": 220
+            },
+            {
+                "code": "columns",
+                "heading": "Column",
+                "description": "The grid-column property is used to specify the grid lines on which a grid item starts and ends along the column axis.",
+                "editorHeight": 400,
+                "outputHeight": 200
+            },
+            {
+                "code": "columns-span",
+                "heading": "Column Span",
+                "description": "span <value> specifies the number of columns the grid item should span.",
+                "editorHeight": 400,
+                "outputHeight": 220
+            },
+            {
+                "code": "row-column-combine",
+                "heading": "Row Column Combine",
+                "description": "To position grid items across both rows and columns, you can use both grid-row and grid-column properties together. ",
+                "editorHeight": 200,
+                "outputHeight": 200
             }
         ]
     }

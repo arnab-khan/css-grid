@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}
+
+.item-2 {
+    /* Grid item starts at row line 3 and ends at row line 6 */
+    grid-row: 3 / 6;
+    /* Grid item starts at column line 2 and ends at column line 4 */
+    grid-column: 2 / 4;
+}

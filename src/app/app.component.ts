@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Params, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private dataTransferService: DataTransferService,
+    private router: Router,
     private activatedRoute: ActivatedRoute
   ) { }
 
@@ -109,6 +110,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       setTimeout(() => {
         this.checkIfAllApiCallCompleted({ clickedMenu: true });
+        this.dataTransferService.setRefrashEditor(true);
       }, 0);
     }, 0);
     if (this.isMobileScreen) {
@@ -155,22 +157,25 @@ export class AppComponent implements OnInit {
   scrollToTop(elementClass: string) {
     const scrollElement = document.querySelector(elementClass);
     if (scrollElement) {
-      if (window.innerWidth > 991) {
-        scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.scrollTo({
-          top: 0
-        });
-        const elementTop: number = scrollElement.getBoundingClientRect().top;
-        if (this.headerElement) {
-          const headerElement: HTMLElement = this.headerElement.nativeElement;
-          const headerHeight = headerElement.getBoundingClientRect().bottom - headerElement.getBoundingClientRect().top;
+      setTimeout(() => {
+        if (window.innerWidth > 991) {
+          scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
           window.scrollTo({
-            top: elementTop - headerHeight,
-            behavior: 'smooth'
+            top: 0
           });
+          const elementTop: number = scrollElement.getBoundingClientRect().top;
+          if (this.headerElement) {
+            const headerElement: HTMLElement = this.headerElement.nativeElement;
+            const headerHeight = headerElement.getBoundingClientRect().bottom - headerElement.getBoundingClientRect().top;
+            window.scrollTo({
+              top: elementTop - headerHeight,
+              behavior: 'smooth'
+            });
+          }
         }
-      }
+        this.router.navigate([]);
+      }, 0);
     }
   }
 }

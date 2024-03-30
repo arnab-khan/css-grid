@@ -9,7 +9,7 @@
 }
 
 .item-1 {
-    /* Grid item starts at column line 2 and ends at column line 3 */
+    /* Grid item starts at column line 2 and ends at column line 6 */
     grid-column: 2 / 6;
 }
 

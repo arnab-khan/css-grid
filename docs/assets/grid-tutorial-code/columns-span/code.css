@@ -1,0 +1,49 @@
+.container {
+    display: grid;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}
+
+.item-1 {
+    /* Grid item starts at column line 2 and span across column line 6 */
+    grid-column: 2 / span 6;
+}
+
+.item-2 {
+    /* Grid item starts at column line 1 and span across column line 4 */
+    grid-column: 1 / span 4;
+}
+
+.item-3 {
+    /* Grid item starts at column line 4 and span across column line 6 */
+    grid-column: 4 / span 6;
+}
+
+.item-4 {
+    /* Grid item starts at column line 1 and span across column line 11 */
+    grid-column: 1 / span 11;
+}
+
+.item-5 {
+    /* Grid item starts at column line -1 and span across column line -4 */
+    grid-column: -1 / span -4;
+}
+
+.item-6 {
+    /* Grid item starts at column line -2 and span across column line 3 */
+    grid-column: -2 / span 3;
+}
+
+.item-7 {
+    /* Grid item starts at column line -3 and span across column line 3 */
+    grid-column: -3 / span 3;
+}
+
+.item-8 {
+    /* Grid item starts at left most column and span across column line 11 */
+    grid-column: span 11;
+}

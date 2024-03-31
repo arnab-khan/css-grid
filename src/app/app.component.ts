@@ -128,7 +128,9 @@ export class AppComponent implements OnInit {
   windoResize() {
     fromEvent(window, 'resize').subscribe(() => {
       this.resetMenuOpen();
-      this.resetPage();
+      if (window.innerWidth > 481) {
+        this.resetPage();
+      }
     })
   }
 

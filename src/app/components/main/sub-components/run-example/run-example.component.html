@@ -9,14 +9,14 @@
   </div>
   <div class="editor">
     <ngx-monaco-editor [options]="editorOptionsHtml" [(ngModel)]="gridTutorialCode.htmlCode"
-      [ngStyle]="{height:(size?.editorHeight??200)+'px'}" (ngModelChange)="changeHtml($event)"
+      [ngStyle]="{height:(size?.editorHeight??250)+'px'}" (ngModelChange)="changeHtml($event)"
       (onInit)="editorOnInit()">
     </ngx-monaco-editor>
     <div class="editor-title-middle">
       CSS
     </div>
     <ngx-monaco-editor [options]="editorOptionsCss" [(ngModel)]="gridTutorialCode.cssCode"
-      [ngStyle]="{height:(size?.editorHeight??200)+'px'}" (ngModelChange)="changeCss($event)" (onInit)="editorOnInit()">
+      [ngStyle]="{height:(size?.editorHeight??250)+'px'}" (ngModelChange)="changeCss($event)" (onInit)="editorOnInit()">
     </ngx-monaco-editor>
     @if (editorLoader<0) { <div class="loader">
       <img src="assets/images/loader/loader-white.svg" alt="loader">

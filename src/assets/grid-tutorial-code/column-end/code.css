@@ -1,0 +1,21 @@
+.container {
+    display: grid;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}
+
+.item-1 {
+    /* Grid item column ends at row line 3 */
+    grid-column-end: 3;
+    background-color: #00ffff;
+}
+
+.item-3 {
+    /* Grid item column ends at row line 6 */
+    grid-column-end: 6;
+    background-color: #00ffff;
+}

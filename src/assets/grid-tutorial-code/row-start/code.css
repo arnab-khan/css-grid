@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}
+
+.item-1 {
+    /* Grid item starts at row line 3 */
+    grid-row-start: 3;
+    background-color: #00ffff;
+}
+
+.item-3 {
+    /* Grid item starts at row line 6 */
+    grid-row-start: 6;
+    background-color: #00ffff;
+}

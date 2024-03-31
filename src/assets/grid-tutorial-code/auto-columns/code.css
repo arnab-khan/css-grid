@@ -1,0 +1,12 @@
+.container {
+    display: grid;
+    /* Sets the width of implicitly created columns to 75% */
+    grid-auto-columns: 75%;
+    border: 5px solid #0084ff;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

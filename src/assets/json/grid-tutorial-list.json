@@ -49,7 +49,6 @@
                 "code": "grid-template",
                 "heading": "Grid Template",
                 "description": "The grid-template property in CSS Grid layout is a shorthand property that allows you to set both grid-template-rows and grid-template-columns in a single declaration.",
-                "editorHeight": 200,
                 "outputHeight": 190,
                 "outputMinWidth": 400
             },
@@ -116,7 +115,6 @@
                 "code": "row-gap",
                 "heading": "Row Gap",
                 "description": "Row-gap sets the size of the gap between rows.",
-                "editorHeight": 200,
                 "outputHeight": 100,
                 "outputMinWidth": 0
             },
@@ -124,7 +122,6 @@
                 "code": "column-gap",
                 "heading": "Column Gap",
                 "description": "column-gap sets the size of the gap between columns.",
-                "editorHeight": 200,
                 "outputHeight": 120,
                 "outputMinWidth": 0
             }
@@ -137,9 +134,21 @@
         "description": "The grid-row and grid-column properties in CSS Grid layout are used to explicitly define the placement of grid items along the row and column axes within a grid container.",
         "content": [
             {
+                "code": "row-start",
+                "heading": "Grid Row Start",
+                "description": "This property specifies the grid row line where an item's placement should begin. It defines the start position of the grid item along the vertical axis (rows) of the grid.",
+                "editorHeight": 320
+            },
+            {
+                "code": "row-end",
+                "heading": "Grid Row End",
+                "description": "This property specifies the grid row line where an item's placement should end. It defines the end position of the grid item along the vertical axis (rows) of the grid.",
+                "editorHeight": 320
+            },
+            {
                 "code": "rows",
-                "heading": "Row",
-                "description": "The grid-row property is used to specify the grid lines on which a grid item starts and ends along the row axis.",
+                "heading": "Grid Row",
+                "description": "The grid-row property is a shorthand property that combines grid-row-start and grid-row-end into a single declaration. It allows you to specify both the starting and ending positions of a grid item along the grid's rows in one line.",
                 "editorHeight": 300
             },
             {
@@ -150,9 +159,23 @@
                 "outputHeight": 220
             },
             {
+                "code": "column-start",
+                "heading": "Grid Column Start",
+                "description": "This property specifies the grid column line where an item's placement should begin. It defines the start position of the grid item along the horizontal axis (columns) of the grid.",
+                "editorHeight": 320,
+                "outputHeight": 120
+            },
+            {
+                "code": "column-end",
+                "heading": "Grid Column End",
+                "description": "This property specifies the grid column line where an item's placement should end. It defines the end position of the grid item along the horizontal axis (columns) of the grid.",
+                "editorHeight": 320,
+                "outputHeight": 145
+            },
+            {
                 "code": "columns",
-                "heading": "Column",
-                "description": "The grid-column property is used to specify the grid lines on which a grid item starts and ends along the column axis.",
+                "heading": "Grid Columns",
+                "description": "The grid-column property is a shorthand property that combines grid-column-start and grid-column-end into a single declaration. It allows you to specify both the starting and ending positions of a grid item along the grid's columns in one line.",
                 "editorHeight": 400,
                 "outputHeight": 200
             },
@@ -164,11 +187,22 @@
                 "outputHeight": 220
             },
             {
-                "code": "row-column-combine",
-                "heading": "Row Column Combine",
-                "description": "To position grid items across both rows and columns, you can use both grid-row and grid-column properties together.",
-                "editorHeight": 200,
+                "code": "grid-area",
+                "heading": "Grid Area",
+                "description": "Using grid-area shorthand can be convenient when you need to specify both row and column placement for grid items in a single declaration.",
                 "outputHeight": 200
+            },
+            {
+                "code": "auto-rows",
+                "heading": "Grid Auto Rows",
+                "description": "This property sets the size of implicitly created rows in the grid. If the grid container does not have enough rows defined to accommodate all grid items, additional rows are created automatically. The grid-auto-rows property allows you to specify the size of these auto-generated rows.",
+                "outputHeight": 180
+            },
+            {
+                "code": "auto-columns",
+                "heading": "Grid Auto Columns",
+                "description": "This property sets the size of implicitly created columns in the grid. It defines the width of automatically generated columns when the grid container doesn't have enough columns explicitly defined.",
+                "outputHeight": 140
             }
         ]
     },
@@ -246,7 +280,6 @@
                 "code": "place-self",
                 "heading": "Place Self",
                 "description": "The place-self property is a shorthand property that allows you to set both the align-self and justify-self properties of grid items in a single declaration.",
-                "editorHeight": 200,
                 "outputHeight": 190,
                 "outputMinWidth": 0
             }

@@ -16,7 +16,7 @@
     display: grid;
     grid-template-rows: 50px 100px;
     grid-template-columns: 1fr 2fr;
-    /* 0 gap for both rows and columns */
+    /* auto is invalid */
     grid-gap: auto;
 }
 

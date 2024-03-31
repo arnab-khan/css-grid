@@ -191,7 +191,15 @@
                 "heading": "Grid Area",
                 "description": "Using grid-area shorthand can be convenient when you need to specify both row and column placement for grid items in a single declaration.",
                 "outputHeight": 200
-            },
+            }
+        ]
+    },
+    {
+        "code": "auto-rows-columns",
+        "slug": "auto-rows-columns",
+        "heading": "Auto Rows Columns",
+        "description": "It allow you to define the size of implicitly created rows and columns in a grid when they are not explicitly defined.",
+        "content": [
             {
                 "code": "auto-rows",
                 "heading": "Grid Auto Rows",
@@ -281,6 +289,35 @@
                 "heading": "Place Self",
                 "description": "The place-self property is a shorthand property that allows you to set both the align-self and justify-self properties of grid items in a single declaration.",
                 "outputHeight": 190,
+                "outputMinWidth": 0
+            }
+        ]
+    },
+    {
+        "code": "auto-flow",
+        "slug": "auto-flow",
+        "heading": "Grid Auto Flow",
+        "description": "The grid-auto-flow property in CSS Grid defines how auto-placed grid items are positioned within the grid container. It allows you to control the direction and packing behavior of these items.",
+        "content": [
+            {
+                "code": "auto-flow-row",
+                "description": "<strong>Row</strong><br> Specifies that auto-placed items are positioned row by row from left to right, and then top to bottom. This is the default behavior.",
+                "explain": "Nothing will effect as \"row\" is default value",
+                "outputHeight": 160,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "auto-flow-column",
+                "description": "<strong>Column</strong><br> Specifies that auto-placed items are positioned column by column from top to bottom, and then left to right.",
+                "editorHeight": 400,
+                "outputHeight": 160,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "auto-flow-dense",
+                "description": "<strong>Dense</strong><br> The grid-auto-flow: dense; property in CSS Grid specifies that auto-placed grid items are positioned densely within the grid container, attempting to fill in any gaps left by smaller items with larger ones.",
+                "editorHeight": 400,
+                "outputHeight": 320,
                 "outputMinWidth": 0
             }
         ]

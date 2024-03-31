@@ -10,8 +10,9 @@
 }
 
 .item-2 {
-    /* Grid item starts at row line 3 and ends at row line 6 */
-    grid-row: 3 / 6;
-    /* Grid item starts at column line 2 and ends at column line 4 */
-    grid-column: 2 / 4;
+    /* 
+    Grid item starts at row line 3 and ends at row line 6
+    Grid item starts at column line 2 and ends at column line 4
+    */
+    grid-area: 3 / 2 / 6 / 4;
 }

@@ -1,4 +1,12 @@
-# cssgrid
+# CSS Grid Tutorials with Angular
+
+Welcome to the CSS Grid Tutorials project built with Angular! This repository contains a series of tutorials aimed at helping developers learn and master CSS Grid layout techniques using Angular.
+
+## Deployment
+
+This project is deployed and accessible live at: [https://arnab-khan.github.io/css-grid/](https://arnab-khan.github.io/css-grid/).
+
+# framework
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 

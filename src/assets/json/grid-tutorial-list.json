@@ -321,5 +321,18 @@
                 "outputMinWidth": 0
             }
         ]
+    },
+    {
+        "code": "subgrid",
+        "slug": "subgrid",
+        "heading": "Subgrid",
+        "description": "Subgrid is a feature in CSS Grid Layout that allows the grid items within a nested grid container to align with the grid tracks of the parent grid container. It essentially enables nested grids to inherit the row and column tracks of their parent grid, providing a way to create complex grid structures with consistent alignment across different levels of nesting.",
+        "content": [
+            {
+                "code": "subgrid",
+                "outputHeight": 200,
+                "outputMinWidth": 0
+            }
+        ]
     }
 ]

@@ -28,7 +28,7 @@
         <div class="main-content-loader" [ngStyle]="{ display: mainPageLoader ? 'flex' : 'none' }">
           <img src="assets/images/loader/loader-green.svg" alt="loader" />
         </div>
-        <div class="page-content">
+        <div class="page-content" [ngStyle]="{ display: mainPageLoader ? 'none' : 'block' }">
           <main class="main-content">
             <div>
               <router-outlet></router-outlet>

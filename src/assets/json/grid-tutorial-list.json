@@ -138,9 +138,90 @@
             {
                 "code": "row-column-combine",
                 "heading": "Row Column Combine",
-                "description": "To position grid items across both rows and columns, you can use both grid-row and grid-column properties together. ",
+                "description": "To position grid items across both rows and columns, you can use both grid-row and grid-column properties together.",
                 "editorHeight": 200,
                 "outputHeight": 200
+            }
+        ]
+    },
+    {
+        "code": "aligning-items",
+        "slug": "aligning-items",
+        "heading": "Aligning Items",
+        "description": "You can align grid items both horizontally and vertically",
+        "content": [
+            {
+                "code": "justify-items",
+                "heading": "Justify Items",
+                "description": "The justify-items property aligns grid items along the inline (row) axis within their grid areas.",
+                "editorHeight": 400,
+                "outputHeight": 420,
+                "outputMinWidth": 500
+            },
+            {
+                "code": "align-items",
+                "heading": "Align Items",
+                "description": "The align-content property aligns the grid along the block (column) axis inside the grid container.",
+                "editorHeight": 400,
+                "outputHeight": 500,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "place-items",
+                "heading": "Place Items",
+                "description": "The place-items property is a shorthand for setting both justify-items and align-items properties simultaneously.",
+                "editorHeight": 300,
+                "outputHeight": 500,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "justify-content",
+                "heading": "Justify Content",
+                "description": "The justify-content property aligns the grid along the inline (row) axis inside the grid container.",
+                "editorHeight": 500,
+                "outputHeight": 500,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "align-content",
+                "heading": "Align Content",
+                "description": "The align-content property in CSS Grid layout aligns the grid along the block (column) axis inside the grid container when there is extra space in the grid container. It controls how multiple rows of grid tracks are aligned within the grid container.",
+                "editorHeight": 500,
+                "outputHeight": 500,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "place-content",
+                "heading": "Place Content",
+                "description": "The place-content property is a shorthand for setting both justify-content and align-content properties simultaneously.",
+                "editorHeight": 500,
+                "outputHeight": 500,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "align-self",
+                "heading": "Align Self",
+                "description": "The align-self property aligns a single grid item along the block (column) axis within its grid area.",
+                "editorHeight": 300,
+                "outputHeight": 300,
+                "outputMinWidth": 0
+            },
+            {
+                "code": "justify-self",
+                "heading": "Justify Self",
+                "description": "The justify-self property aligns a single grid item along the inline (row) axis within its grid area.",
+                "editorHeight": 300,
+                "outputHeight": 150,
+                "outputMinWidth": 0
+            }
+            ,
+            {
+                "code": "place-self",
+                "heading": "Place Self",
+                "description": "The place-self property is a shorthand property that allows you to set both the align-self and justify-self properties of grid items in a single declaration.",
+                "editorHeight": 200,
+                "outputHeight": 190,
+                "outputMinWidth": 0
             }
         ]
     }

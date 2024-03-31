@@ -1,0 +1,40 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 50px);
+    border: 5px solid #0084ff;
+}
+
+.item-1 {
+    /* Align grid items to the start of the row axis */
+    justify-self: start;
+}
+
+.item-2 {
+    /* Horizontally center grid items */
+    justify-self: center;
+}
+
+.item-3 {
+    /*  Align grid items to the end of the row axis */
+    justify-self: end;
+}
+
+.item-4 {
+    justify-self: stretch;
+}
+
+.item-5 {
+    justify-self: unset;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

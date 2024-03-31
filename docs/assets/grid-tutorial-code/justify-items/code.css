@@ -1,0 +1,42 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    border: 5px solid #0084ff;
+}
+
+.container-1 {
+    /* Aligns grid items along the start of the inline axis within their grid areas. */
+    justify-items: start;
+}
+
+.container-2 {
+    /* Horizontally centers grid items within their grid areas along the inline axis. */
+    justify-items: center;
+}
+
+.container-3 {
+    /*  Aligns grid items along the end of the inline axis within their grid areas. */
+    justify-items: end;
+}
+
+.container-4 {
+    /* Expands grid items to fill the entire width of their grid areas along the inline axis. It is the default value*/
+    justify-items: stretch;
+}
+
+.container-5 {
+    /* Resets justify-items property to its inherited or initial value (stretch) */
+    justify-items: unset;
+}
+
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(3, 100px);
+    border: 5px solid #0084ff;
+}
+
+.place-items {
+    /* Align grid items to the center both vertically and horizontally */
+    place-items: center center;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

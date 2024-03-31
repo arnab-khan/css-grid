@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 50px);
+    border: 5px solid #0084ff;
+}
+
+.item-1 {
+    /* Align the item along the start of the block axis */
+    align-self: start;
+}
+
+.item-3 {
+    /* Align the item along the center of the block axis */
+    align-self: center;
+}
+
+.item-5 {
+    /* Align the item along the end of the block axis */
+    align-self: end;
+}
+
+.item-7 {
+    /* Stretch the item to fill the entire height of its grid area */
+    align-self: stretch;
+}
+
+.item-9 {
+    align-self: unset;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

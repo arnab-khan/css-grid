@@ -1,0 +1,55 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    border: 5px solid #0084ff;
+}
+
+.container-1 {
+    /* Align grid items to the start of the row axis */
+    justify-content: start;
+}
+
+.container-2 {
+    /* Horizontally center grid items */
+    justify-content: center;
+}
+
+.container-3 {
+    /*  Align grid items to the end of the row axis */
+    justify-content: end;
+}
+
+.container-4 {
+    /* Evenly distribute grid items with space between them */
+    justify-content: space-between;
+}
+
+.container-5 {
+    /* Evenly distribute grid items with equal space around them */
+    justify-content: space-around;
+}
+
+.container-6 {
+    /* Evenly distribute grid items with equal space between and around them */
+    justify-content: space-evenly;
+}
+
+.container-7 {
+    justify-content: stretch;
+}
+
+.container-8 {
+    justify-content: unset;
+}
+
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

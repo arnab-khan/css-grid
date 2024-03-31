@@ -1,0 +1,42 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    grid-template-rows: repeat(3, 50px);
+    border: 5px solid #0084ff;
+}
+
+.container-1 {
+    /* Grid items will be positioned starting from the start edge of their grid areas along the column axis. */
+    align-items: start;
+}
+
+.container-2 {
+    /* Grid items will be vertically centered within their grid areas along the column axis. */
+    align-items: center;
+}
+
+.container-3 {
+    /*  Grid items will be positioned ending at the end edge of their grid areas along the column axis. */
+    align-items: end;
+}
+
+.container-4 {
+    /* Grid items will stretch to fill the entire height of their grid areas vertically along the column axis. */
+    align-items: stretch;
+}
+
+.container-5 {
+    align-items: unset;
+}
+
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

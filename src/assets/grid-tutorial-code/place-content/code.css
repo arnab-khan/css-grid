@@ -1,0 +1,22 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    border: 5px solid #0084ff;
+    height: 120px;
+}
+
+.place-content {
+    place-content: space-evenly space-evenly;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

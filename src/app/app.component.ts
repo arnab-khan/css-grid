@@ -98,6 +98,7 @@ export class AppComponent implements OnInit {
           this.mainPageLoader = false;
           this.scrollToSearchElement();
           this.pageLoaded = true;
+          this.dataTransferService.setRefrashEditor(true);
         }
       }, 0);
     }, 0);
@@ -110,7 +111,6 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       setTimeout(() => {
         this.checkIfAllApiCallCompleted({ clickedMenu: true });
-        this.dataTransferService.setRefrashEditor(true);
       }, 0);
     }, 0);
     if (this.isMobileScreen) {
@@ -158,23 +158,25 @@ export class AppComponent implements OnInit {
     const scrollElement = document.querySelector(elementClass);
     if (scrollElement) {
       setTimeout(() => {
-        if (window.innerWidth > 991) {
-          scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          window.scrollTo({
-            top: 0
-          });
-          const elementTop: number = scrollElement.getBoundingClientRect().top;
-          if (this.headerElement) {
-            const headerElement: HTMLElement = this.headerElement.nativeElement;
-            const headerHeight = headerElement.getBoundingClientRect().bottom - headerElement.getBoundingClientRect().top;
+        setTimeout(() => {
+          if (window.innerWidth > 991) {
+            scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
             window.scrollTo({
-              top: elementTop - headerHeight,
-              behavior: 'smooth'
+              top: 0
             });
+            const elementTop: number = scrollElement.getBoundingClientRect().top;
+            if (this.headerElement) {
+              const headerElement: HTMLElement = this.headerElement.nativeElement;
+              const headerHeight = headerElement.getBoundingClientRect().bottom - headerElement.getBoundingClientRect().top;
+              window.scrollTo({
+                top: elementTop - headerHeight,
+                behavior: 'smooth'
+              });
+            }
           }
-        }
-        this.router.navigate([]);
+          this.router.navigate([]);
+        }, 0);
       }, 0);
     }
   }

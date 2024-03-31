@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    grid-template-areas:
+        /* Row 1 */
+        'areaItem1 areaItem1 . . areaItem2 . . .'
+        /* Row 2 */
+        '. . areaItem3 areaItem3 areaItem3 . . .'
+        /* Row 3 */
+        '. . . . . . . .'
+        /* Row 4 */
+        'areaItem4 areaItem4 areaItem4 areaItem4 areaItem4 areaItem4 areaItem4 areaItem4'
+    ;
+}
+
+.area-item-1 {
+    grid-area: areaItem1;
+}
+
+.area-item-2 {
+    grid-area: areaItem2;
+}
+
+.area-item-3 {
+    grid-area: areaItem3;
+}
+
+.area-item-4 {
+    grid-area: areaItem4;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}

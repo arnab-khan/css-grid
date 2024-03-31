@@ -27,8 +27,7 @@
       </div>
       }
       @if (content?.explain) {
-      <p class="description">
-        {{content?.explain}}
+      <p [innerHTML]="content?.explain" class="description">
       </p>
       }
     </li>

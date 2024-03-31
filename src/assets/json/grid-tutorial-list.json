@@ -27,9 +27,9 @@
         ]
     },
     {
-        "code": "template-rows-and-columns",
-        "slug": "template-rows-and-columns",
-        "heading": "Template Rows and Columns",
+        "code": "grid-template",
+        "slug": "grid-template",
+        "heading": "Grid Template",
         "description": "You can define the size of rows and columns using various units like pixels, percentages, or fractions.",
         "content": [
             {
@@ -46,20 +46,48 @@
                 "outputMinWidth": 1100
             },
             {
+                "code": "grid-template",
+                "heading": "Grid Template",
+                "description": "The grid-template property in CSS Grid layout is a shorthand property that allows you to set both grid-template-rows and grid-template-columns in a single declaration.",
+                "editorHeight": 200,
+                "outputHeight": 190,
+                "outputMinWidth": 400
+            },
+            {
+                "code": "template-areas",
+                "heading": "Template Areas",
+                "description": "Grid Template Areas allow you to define the layout of your grid using named grid areas. ",
+                "explain": "<p><strong>Row 1:&nbsp</strong>'&nbsp;areaItem1 &nbsp;areaItem1 . . &nbsp;areaItem2 . . .'</p><ul><li>&nbsp;&nbsp;&nbsp;&nbsp; In this row, there are eight cells.</li><li>&nbsp;&nbsp;&nbsp;&nbsp; The first two cells are named<code>&nbsp;areaItem1</code>, followed by four empty cells denoted by dots (<code>.</code>), and then<code>&nbsp;areaItem2</code>.</li><li>&nbsp;&nbsp;&nbsp;&nbsp; So,<code>&nbsp;areaItem1</code>&nbsp;spans two columns and is repeated twice.<code>&nbsp;areaItem2</code>&nbsp;spans one column.</li></ul><p><br><strong>Row 2:&nbsp</strong>'. . &nbsp;areaItem3 &nbsp;areaItem3 &nbsp;areaItem3 . . .'</p><ul><li>&nbsp;&nbsp;&nbsp;&nbsp; This row has eight cells.</li><li>&nbsp;&nbsp;&nbsp;&nbsp; There are three consecutive cells with the name<code>&nbsp;areaItem3</code>, followed by two empty cells on each side.</li><li>&nbsp;&nbsp;&nbsp;&nbsp; So,<code>&nbsp;areaItem3</code>&nbsp;spans three columns.</li></ul><p><br><strong>Row 3:&nbsp</strong>'. . . . . . . .'</p><ul><li>&nbsp;&nbsp;&nbsp;&nbsp; This row has eight empty cells denoted by dots (<code>.</code>).</li><li>&nbsp;&nbsp;&nbsp;&nbsp; It's an empty row with no named areas.</li></ul><p><br><strong>Row 4:&nbsp</strong>'&nbsp;areaItem4 &nbsp;areaItem4 &nbsp;areaItem4 &nbsp;areaItem4 &nbsp;areaItem4 &nbsp;areaItem4 &nbsp;areaItem4 &nbsp;areaItem4'</p><ul><li>&nbsp;&nbsp;&nbsp;&nbsp; This row has eight cells, and each cell is named<code>&nbsp;areaItem4</code>.</li><li>&nbsp;&nbsp;&nbsp;&nbsp; So,<code>&nbsp;areaItem4</code>&nbsp;spans all eight columns in this row.</li></ul>",
+                "editorHeight": 400,
+                "outputHeight": 150
+            }
+        ]
+    },
+    {
+        "code": "fr-unit",
+        "slug": "fr-unit",
+        "heading": "Fr unit",
+        "description": "The fr unit in CSS Grid layout stands for \"fractional unit\" and is used to distribute available space proportionally among grid tracks (rows or columns). Grid layout behaves like a ratio between items.",
+        "content": [
+            {
                 "code": "fr-unit-template-column",
-                "heading": "Fr unit",
-                "description": "The fr unit in CSS Grid layout stands for \"fractional unit\" and is used to distribute available space proportionally among grid tracks (rows or columns). Grid layout behaves like a ratio between items.",
                 "editorHeight": 500
             },
             {
                 "code": "fr-unit-template-row",
                 "outputHeight": 280,
                 "outputMinWidth": 0
-            },
+            }
+        ]
+    },
+    {
+        "code": "repeat",
+        "slug": "repeat",
+        "heading": "Repeat",
+        "description": "The repeat() function in CSS is not exclusive to grid layouts. While it is commonly used with CSS Grid to create repeated patterns of rows and columns.",
+        "content": [
             {
                 "code": "repeat",
-                "heading": "Repeat",
-                "description": "The repeat() function in CSS is not exclusive to grid layouts. While it is commonly used with CSS Grid to create repeated patterns of rows and columns.",
                 "outputHeight": 280,
                 "outputMinWidth": 0
             }
@@ -213,8 +241,7 @@
                 "editorHeight": 300,
                 "outputHeight": 150,
                 "outputMinWidth": 0
-            }
-            ,
+            },
             {
                 "code": "place-self",
                 "heading": "Place Self",

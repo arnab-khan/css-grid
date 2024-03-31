@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    /* 
+    100px 50px: This specifies the row tracks. It means there are two rows in the grid, with the first row having a height of 100px and the second row having a height of 50px.
+    150px 200px: This specifies the column tracks. It means there are two columns in the grid, with the first column having a width of 150px and the second column having a width of 200px. 
+    */
+    grid-template: 100px 50px / 150px 200px;
+}
+
+.item {
+    text-align: center;
+    border: 3px solid #fa6400;
+    background-color: #fdd8b5;
+}
